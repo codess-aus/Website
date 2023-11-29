@@ -16,27 +16,27 @@ import React from "react";
  * Need an image? Check out https://unsplash.com to download a image you
  * freely use on your site.
  */
-import image from "../images/nuevo.png";
+import image from "../images/crowd1.jpg";
 
-const imageAltText = "blue robot and some code";
+const imageAltText = "a crowd at a tech conference";
 
 /**
  * Sort description that expands on your title on the Home component.
  */
 const description =
-  "I am a developer engagement lead for Microsoft. I love helping enable students to do more bu building on Azure with GitHub Codespaces. I am passionate about solving problems in new creative ways to drive innovation.";
+  "Developer Engagement Lead @ Microsoft - Azure Data Science & AI Certified";
 
 /**
  * List of some of skills or technologies you work on, are learning,
  * passionate about, or enjoy,
  */
 const skillsList = [
-  "Public Speaker",
-  "Pythonista",
-  "Azure Community Hero",
-  "She Codes Mentor",
-  "Guest Lecturer",
-  "AI Chatbot builder",
+  "Developer relations",
+  "Mentoring",
+  "Conference Speaker",
+  "Games industry advocate",
+  "Microsoft Certified Trainer",
+  "Open Sourcerer",
 ];
 
 /**
@@ -45,39 +45,25 @@ const skillsList = [
  * about you on a professional level.
  */
 const detailOrQuote =
-  "I am passionate about solving problems in new creative ways to drive innovation.";
+  "Tedx Speaker, developer community mentor, Microsoftie and international conference Speaker. I live at the heart of the coding community and help drive awareness and engagement as a developer advocate and technology evangelist. I advocate for STEM, the Games Industry and Developers. I present at around 50 Conferences and Events around the world on Technology, Learning to Code, Open Source and Building Bots. I judge hackathons and encourage the next generation into technology careers. ";
+
+import './About.css';
 
 const About = () => {
   return (
-    <section className="padding" id="about">
-      <img className="background" src={image} alt={imageAltText} />
-      <div
-        style={{
-          backgroundColor: "white",
-          width: "50%",
-          padding: "4rem",
-          margin: "3rem auto",
-          textAlign: "center",
-        }}
-      >
+    <section className="about" id="about">
+      {/* <img className="about__background" src={image} alt={imageAltText} />/ */}
+      <div className="about__content">
         <h2>About Myself</h2>
-        <p className="large">{description}</p>
+        <p className="about__description">{description}</p>
         <hr />
-        <ul
-          style={{
-            textAlign: "left",
-            columns: 2,
-            fontSize: "1.25rem",
-            margin: "2rem 3rem",
-            gap: "3rem",
-          }}
-        >
+        <ul className="about__skills">
           {skillsList.map((skill) => (
             <li key={skill}>{skill}</li>
           ))}
         </ul>
         <hr />
-        <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
+        <p className="about__detail">{detailOrQuote}</p>
       </div>
     </section>
   );
